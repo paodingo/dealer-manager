@@ -1,15 +1,42 @@
 @echo off
-set /p username=请输入您的 GitHub 用户名: 
-set /p repository=请输入您的 GitHub 仓库名称（确保已在 GitHub 上创建）: 
+CHCP 65001 > NUL
+echo ==========================================
+echo GitHub Repository Push Script
+echo ==========================================
 
-echo 设置远程仓库地址...
+set /p username=Enter your GitHub username: 
+set /p repository=Enter your GitHub repository name: 
+
+echo.
+echo Removing any existing remote origin...
+git remote remove origin 2>nul
+
+echo Adding remote repository...
 git remote add origin https://github.com/%username%/%repository%.git
 
-echo 设置主分支...
+echo Setting main branch...
 git branch -M main
 
-echo 推送代码到 GitHub...
+echo.
+echo Pushing code to GitHub...
+echo This may take a few minutes depending on your connection speed.
 git push -u origin main
 
-echo 推送完成！
+if %errorlevel% == 0 (
+    echo.
+    echo ==========================================
+    echo Success! Your project has been pushed to GitHub.
+    echo Repository URL: https://github.com/%username%/%repository%
+    echo ==========================================
+) else (
+    echo.
+    echo ==========================================
+    echo Error occurred while pushing to GitHub.
+    echo Please check:
+    echo 1. Your internet connection
+    echo 2. Your username and repository name
+    echo 3. That the repository exists on GitHub
+    echo ==========================================
+)
+
 pause
