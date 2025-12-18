@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dealermanager.mapper_dealer.WayBillMapper">
+    <select id="queryWaybillInfo" resultType="com.dealermanager.entity.WaybillEntity">
+        SELECT w.id,w.departurePlace,w.destination,w.orderNo,date_format(w.orderTime,'%Y-%m-%d %H:%i') orderTime,
+        date_format(w.expectArrDate,'%Y-%m-%d %H:%i') expectArrDate,w.goodsDesc,w.num,
+        w.weight,w.volume,w.density,w.custNo,w.unitPrice,w.goodsValue,w.insurance,w.packingFee,
+        w.foreignCost,w.finalCost,w.forwardingFee,w.advanceCapital,w.totalAmountUS,w.totalAmountCN,w.exchangeRate,w.domesticSuppliers,w.custClrCom,
+        w.operator as updatorID, u.name as operator,
+        w.updator as updatorID,uu.name as updator,
+        w.company as companyID,o.name as company,
+        date_format(w.createtime,'%Y-%m-%d %H:%i') createtime,
+        date_format(w.updatetime,'%Y-%m-%d %H:%i') updatetime,
+        w.transport,
+        (w.totalAmountUS-w.finalcost-w.employee1Salary) as profit,
+        w.insuranceRate,w.valuePerKg,
+        w.packageStat,w.goodsDescNum,w.employee1Commission,w.employee1Salary,w.remark
+        FROM t_waybill_info  w
+        left join T_USER u on w.operator = u.id
+        left join T_USER uu on w.updator = uu.id
+        left join T_ORGANIZATION o on w.company = o.id
+        <where>
+            w.company =  #{params.companyID}
+            and w.isvalid = 1
+            <if test="params.orderNo !=null and  params.orderNo !=''">
+                and w.orderNo like CONCAT('%', #{params.orderNo,jdbcType=VARCHAR},'%')
+            </if>
+            <if test="params.custNo !=null and  params.custNo !=''">
+                and w.custNo like CONCAT('%', #{params.custNo,jdbcType=VARCHAR},'%')
+            </if>
+
+            <if test="params.transport !=null and  params.transport !=''">
+                and w.transport = #{params.transport,jdbcType=NUMERIC}
+            </if>
+
+            <if test="params.destination !=null and  params.destination !=''">
+                and w.destination = #{params.destination,jdbcType=NUMERIC}
+            </if>
+
+            <if test="params.beginDate !=null and  params.beginDate !=''">
+                and w.orderTime &gt;= str_to_date(#{params.beginDate},'%Y-%m-%d %H:%i:%s')
+            </if>
+
+            <if test="params.endDate !=null and  params.endDate !=''">
+                and w.orderTime &lt;= str_to_date(#{params.endDate},'%Y-%m-%d %H:%i:%s')
+            </if>
+
+            <choose>
+                <when test="params.packageStat == null or params.packageStat == ''">
+
+                </when>
+                <when test="params.packageStat == -1">
+                    and w.packageStat != 1
+                </when>
+                <otherwise>
+                    and w.packageStat = #{params.packageStat,jdbcType=VARCHAR}
+                </otherwise>
+            </choose>
+        </where>
+        order by orderTime desc
+    </select>
+
+
+    <select id="queryWaybillInfoByOrderNo" resultType="com.dealermanager.entity.WaybillEntity">
+        SELECT w.id,w.departurePlace,w.destination,w.orderNo,date_format(w.orderTime,'%Y-%m-%d %H:%i') orderTime,
+               date_format(w.expectArrDate,'%Y-%m-%d %H:%i') expectArrDate,w.goodsDesc,w.num,
+               w.weight,w.volume,w.density,w.custNo,w.unitPrice,w.goodsValue,w.insurance,w.packingFee,
+               w.foreignCost,w.finalCost,w.forwardingFee,w.advanceCapital,w.totalAmountUS,w.totalAmountCN,w.exchangeRate,w.domesticSuppliers,w.custClrCom,
+               w.operator as updatorID, u.name as operator,
+               w.updator as updatorID,uu.name as updator,
+               w.company as companyID,o.name as company,
+               date_format(w.createtime,'%Y-%m-%d %H:%i') createtime,
+               date_format(w.updatetime,'%Y-%m-%d %H:%i') updatetime,
+               w.transport,
+               (w.totalAmountUS-w.finalcost-w.employee1Salary) as profit,
+               w.insuranceRate,w.valuePerKg,
+               w.packageStat,w.goodsDescNum,w.employee1Commission,w.employee1Salary,w.remark
+        FROM t_waybill_info  w
+                 left join T_USER u on w.operator = u.id
+                 left join T_USER uu on w.updator = uu.id
+                 left join T_ORGANIZATION o on w.company = o.id
+        where w.orderNo = #{params.orderNo,jdbcType=VARCHAR}
+              and  w.company =  #{params.companyID,jdbcType=VARCHAR}
+              and w.isValid = 1
+        limit 1
+    </select>
+
+    <select id="queryWaybillInfoByID" resultType="com.dealermanager.entity.WaybillEntity">
+        SELECT w.departurePlace,w.destination,w.orderNo,date_format(w.orderTime,'%Y-%m-%d %H:%i') orderTime,
+               date_format(w.expectArrDate,'%Y-%m-%d %H:%i') expectArrDate,w.goodsDesc,w.num,
+        w.weight,w.volume,w.density,w.custNo,w.unitPrice,w.goodsValue,w.insurance,w.packingFee,
+        w.foreignCost,w.finalCost,w.forwardingFee,w.advanceCapital,w.totalAmountUS,w.totalAmountCN,w.exchangeRate,w.domesticSuppliers,w.custClrCom,
+        w.operator as updatorID, u.name as operator,
+        w.updator as updatorID,uu.name as updator,
+        w.company as companyID,o.name as company,
+        date_format(w.createtime,'%Y-%m-%d %H:%i') createtime,
+        date_format(w.updatetime,'%Y-%m-%d %H:%i') updatetime,
+        w.transport,
+        (w.totalAmountUS-w.finalcost-w.employee1Salary) as profit,
+        w.insuranceRate,w.valuePerKg,
+        w.packageStat,w.goodsDescNum,w.employee1Commission,w.employee1Salary,w.remark
+        FROM t_waybill_info  w
+        left join T_USER u on w.operator = u.id
+        left join T_USER uu on w.updator = uu.id
+        left join T_ORGANIZATION o on w.company = o.id
+        where w.id = #{waybillID,jdbcType = NUMERIC}
+        and w.isValid = 1
+    </select>
+
+    <select id="queryWaybillStat" resultType="com.dealermanager.entity.WaybillStatEntity">
+        select w.id,w.waybillID,w.packageStat,
+               w.operator as operatorID,
+               u.name as operator,
+               date_format(w.createtime,'%Y-%m-%d %H:%i') createtime
+        from t_waybill_stat w
+        left join T_USER u on w.operator = u.id
+        where w.isValid= 1
+          and w.waybillID = #{params.id,jdbcType = NUMERIC}
+    </select>
+
+    <insert id="addWaybill" useGeneratedKeys="true" keyProperty="id">
+        insert into t_waybill_info(departurePlace,destination,orderNo,orderTime,expectArrDate,goodsDesc,num,
+                                   weight,volume,density,custNo,unitPrice,goodsValue,insurance,packingFee,
+                                   foreignCost,finalCost,forwardingFee,advanceCapital,totalAmountUS,totalAmountCN,exchangeRate,domesticSuppliers,custClrCom,
+                                   operator,company,createtime,packageStat,transport,profit,insuranceRate,valuePerKg,goodsDescNum,
+                                   employee1Commission,employee1Salary,remark)
+        values(#{params.departurePlace,jdbcType = VARCHAR},
+        #{params.destination,jdbcType = NUMERIC},
+        #{params.orderNo,jdbcType = VARCHAR},
+        str_to_date(#{params.orderTime},'%Y-%m-%d %H:%i:%s'),
+        str_to_date(#{params.expectArrDate},'%Y-%m-%d %H:%i:%s'),
+        #{params.goodsDesc,jdbcType = VARCHAR},
+        #{params.num,jdbcType = NUMERIC},
+        #{params.weight,jdbcType = NUMERIC},
+        #{params.volume,jdbcType = NUMERIC},
+        #{params.density,jdbcType = NUMERIC},
+        #{params.custNo,jdbcType = VARCHAR},
+        #{params.unitPrice,jdbcType = NUMERIC},
+        #{params.goodsValue,jdbcType = NUMERIC},
+        #{params.insurance,jdbcType = NUMERIC},
+        #{params.packingFee,jdbcType = NUMERIC},
+        #{params.foreignCost,jdbcType = NUMERIC},
+        #{params.finalCost,jdbcType = NUMERIC},
+        #{params.forwardingFee,jdbcType = NUMERIC},
+        #{params.advanceCapital,jdbcType = NUMERIC},
+        #{params.totalAmountUS,jdbcType = NUMERIC},
+        #{params.totalAmountCN,jdbcType = NUMERIC},
+        #{params.exchangeRate,jdbcType = NUMERIC},
+        #{params.domesticSuppliers,jdbcType = VARCHAR},
+        #{params.custClrCom,jdbcType = VARCHAR},
+        #{params.operatorID,jdbcType = NUMERIC},
+        #{params.companyID,jdbcType = NUMERIC},
+        now(),
+        #{params.packageStat,jdbcType = NUMERIC},
+        #{params.transport,jdbcType = NUMERIC},
+        #{params.profit,jdbcType = NUMERIC},
+        #{params.insuranceRate,jdbcType = NUMERIC},
+        #{params.valuePerKg,jdbcType = NUMERIC},
+        #{params.goodsDescNum,jdbcType = NUMERIC},
+        #{params.employee1Commission,jdbcType = NUMERIC},
+        #{params.employee1Salary,jdbcType = NUMERIC},
+        #{params.remark,jdbcType = VARCHAR}
+        )
+    </insert>
+
+    <update id="updateWaybill">
+        update t_waybill_info set
+            departurePlace = #{params.departurePlace,jdbcType = VARCHAR},
+            destination = #{params.destination,jdbcType = NUMERIC},
+            orderNo = #{params.orderNo,jdbcType = VARCHAR},
+            orderTime = str_to_date(#{params.orderTime},'%Y-%m-%d %H:%i:%s'),
+            expectArrDate = str_to_date(#{params.expectArrDate},'%Y-%m-%d %H:%i:%s'),
+            goodsDesc = #{params.goodsDesc,jdbcType = VARCHAR},
+            num = #{params.num,jdbcType = NUMERIC},
+            weight = #{params.weight,jdbcType = NUMERIC},
+            volume = #{params.volume,jdbcType = NUMERIC},
+            density = #{params.density,jdbcType = NUMERIC},
+            custNo = #{params.custNo,jdbcType = VARCHAR},
+            unitPrice = #{params.unitPrice,jdbcType = NUMERIC},
+            goodsValue = #{params.goodsValue,jdbcType = NUMERIC},
+            insurance = #{params.insurance,jdbcType = NUMERIC},
+            packingFee = #{params.packingFee,jdbcType = NUMERIC},
+            foreignCost = #{params.foreignCost,jdbcType = NUMERIC},
+            finalCost = #{params.finalCost,jdbcType = NUMERIC},
+            forwardingFee = #{params.forwardingFee,jdbcType = NUMERIC},
+            advanceCapital = #{params.advanceCapital,jdbcType = NUMERIC},
+            totalAmountUS = #{params.totalAmountUS,jdbcType = NUMERIC},
+            totalAmountCN = #{params.totalAmountCN,jdbcType = NUMERIC},
+            exchangeRate = #{params.exchangeRate,jdbcType = NUMERIC},
+            domesticSuppliers = #{params.domesticSuppliers,jdbcType = VARCHAR},
+            custClrCom = #{params.custClrCom,jdbcType = VARCHAR},
+            updator = #{params.updatorID,jdbcType = NUMERIC},
+            updatetime = now(),
+            packageStat = #{params.packageStat,jdbcType = NUMERIC},
+            transport = #{params.transport,jdbcType = NUMERIC},
+            profit = #{params.profit,jdbcType = NUMERIC},
+            insuranceRate = #{params.insuranceRate,jdbcType = NUMERIC},
+            valuePerKg = #{params.valuePerKg,jdbcType = NUMERIC},
+            goodsDescNum = #{params.goodsDescNum,jdbcType = NUMERIC},
+            employee1Commission = #{params.employee1Commission,jdbcType = NUMERIC},
+            employee1Salary = #{params.employee1Salary,jdbcType = NUMERIC},
+            remark = #{params.remark,jdbcType = VARCHAR}
+            where id = #{params.id,jdbcType = NUMERIC}
+    </update>
+
+    <update id="deleteWaybill">
+        update t_waybill_info set isvalid = 0 where id = #{id,jdbcType = NUMERIC}
+    </update>
+
+
+    <insert id ="addWaybillStat">
+        insert  into t_waybill_stat(waybillID,packageStat,operator)
+        select #{params.waybillID,jdbcType = NUMERIC},
+                #{params.packageStat,jdbcType = NUMERIC},
+               #{params.operatorID,jdbcType = NUMERIC}
+        from dual
+        where not exists(select 1 from t_waybill_stat where waybillID = #{params.waybillID,jdbcType = NUMERIC}
+                            and packageStat = #{params.packageStat,jdbcType = NUMERIC})
+    </insert>
+
+    <update id="deleteWaybillStat">
+        update t_waybill_stat set isvalid = 0 where id = #{id,jdbcType = NUMERIC}
+    </update>
+
+    <update id="deleteWaybillStatByWayBill">
+        update t_waybill_stat set isvalid = 0 where waybillID = #{waybillID,jdbcType = NUMERIC}
+    </update>
+
+    <select id="statisticsByTransport" resultType="com.dealermanager.model.waybill.TransportStatisticsModel">
+        SELECT
+        tt.transport,
+        ROUND(sum(tt.weight),2) as weight,
+        ROUND(sum(tt.totalAmountUS),2) as totalAmountUS
+        FROM
+        (
+        SELECT
+        CONVERT (
+        date_format(t.orderTime, '%Y%m'),
+        SIGNED
+        ) AS orderTimeNum,
+        t.*
+        FROM
+        t_waybill_info t
+        ) tt
+        WHERE
+        tt.company =  #{params.companyID,jdbcType=NUMERIC}
+        and tt.isValid = 1
+        AND tt.orderTimeNum &gt;= #{params.beginMonth,jdbcType=NUMERIC}
+        AND tt.orderTimeNum &lt;= #{params.endMonth,jdbcType=NUMERIC}
+        GROUP BY
+        tt.transport
+    </select>
+    
+    <select id="statisticsByMonth" resultType="com.dealermanager.model.waybill.MonthStatisticsModel">
+        SELECT
+        CONCAT(substr(tt.orderTimeNum,1,4),'-',substr(tt.orderTimeNum,5)) as month ,
+        count(1) as orderNum,
+        ROUND(sum(tt.weight),2) as weight,
+        ROUND(sum(tt.totalAmountUS),2) as totalAmountUS,
+        ROUND(sum(tt.totalAmountUS-tt.finalcost-tt.employee1Salary),2) as profit,
+        count(distinct tt.custNo) as custNum
+        FROM
+        (
+        SELECT
+        CONVERT (
+        date_format(t.orderTime, '%Y%m'),
+        SIGNED
+        ) AS orderTimeNum,
+        t.*
+        FROM
+        t_waybill_info t
+        <if test="params.custNo !=null and  params.custNo !=''">
+            where  t.custNo like CONCAT('%', #{params.custNo,jdbcType=VARCHAR},'%')
+        </if>
+        ) tt
+        WHERE
+        tt.company =  #{params.companyID,jdbcType=NUMERIC}
+        and tt.isValid = 1
+        AND tt.orderTimeNum &gt;= #{params.beginMonth,jdbcType=NUMERIC}
+        AND tt.orderTimeNum &lt;= #{params.endMonth,jdbcType=NUMERIC}
+        GROUP BY
+        tt.orderTimeNum
+    </select>
+
+    <select id="statisticThisYear" resultType="com.dealermanager.model.waybill.MonthStatisticsModel">
+        SELECT
+            count(1) as orderNum,
+            ROUND(sum(tt.weight),2) as weight,
+            ROUND(sum(tt.totalAmountUS),2) as totalAmountUS,
+            ROUND(sum(tt.totalAmountUS-tt.finalcost-tt.employee1Salary),2) as profit,
+            count(distinct tt.custNo) as custNum
+        FROM t_waybill_info tt
+        WHERE
+                tt.company = #{params.companyID,jdbcType=NUMERIC}
+                and tt.isValid = 1
+                AND YEAR(tt.orderTime) = YEAR(now())
+    </select>
+    
+    <select id="queryWeightDeclineCust" resultType="com.dealermanager.model.waybill.MonthDeclineModel">
+        SELECT
+        ttttt.*,
+        <choose>
+            <when test="params.compareFlag==0">
+                ROUND(1 - ttttt.thisWeight /ttttt.lastWeight,2) * 100 as comparePercent,
+                (lastWeight - thisWeight) as compareWeight
+            </when>
+            <otherwise>
+                if(ttttt.lastWeight=0,100,ROUND(ttttt.thisWeight / ttttt.lastWeight - 1,2) * 100) as comparePercent,
+                ( thisWeight - lastWeight ) as compareWeight
+            </otherwise>
+        </choose>
+
+        FROM
+        (
+        SELECT
+        custNo,
+        sum(thisMonthWeight) AS thisWeight,
+        sum(lastMonthWeight) AS lastWeight
+        FROM
+        (
+        SELECT
+        ttt.custNo,
+        CASE ttt.orderTimeNum
+        WHEN #{params.thisMonth,jdbcType = VARCHAR} THEN
+        weight
+        ELSE
+        0
+        END AS thisMonthWeight,
+        CASE ttt.orderTimeNum
+        WHEN #{params.lastMonth,jdbcType = VARCHAR} THEN
+        weight
+        ELSE
+        0
+        END AS lastMonthWeight
+        FROM
+        (
+        SELECT
+        tt.orderTimeNum,
+        tt.custNo,
+        sum(tt.weight),
+        ROUND(sum(IFNULL(tt.weight,0)), 2) AS weight
+        FROM
+        (
+        SELECT
+        CONVERT (
+        date_format(t.orderTime, '%Y%m'),
+        SIGNED
+        ) AS orderTimeNum,
+        t.*
+        FROM
+        t_waybill_info t
+        <if test="params.custNo !=null and  params.custNo !=''">
+            where  t.custNo like CONCAT('%', #{params.custNo,jdbcType=VARCHAR},'%')
+        </if>
+        ) tt
+        WHERE
+        tt.company =  #{params.companyID,jdbcType=NUMERIC}
+        and tt.isValid = 1
+        and tt.orderTimeNum IN (#{params.thisMonth,jdbcType = VARCHAR}, #{params.lastMonth,jdbcType = VARCHAR})
+        GROUP BY
+        tt.orderTimeNum,
+        tt.custNo
+        ) ttt
+        ) tttt
+        GROUP BY
+        tttt.custNo
+        ) ttttt where 1=1
+        <choose>
+            <when test="params.compareFlag==0">
+                <if test="params.percent !=null ">
+                    and (ttttt.lastWeight != 0 and ttttt.thisWeight /ttttt.lastWeight &lt;= 1-#{params.percent})
+                </if>
+                <if test="params.difference !=null ">
+                    and (ttttt.lastWeight - ttttt.thisWeight  &gt;= #{params.difference})
+                </if>
+                order by ttttt.thisWeight /ttttt.lastWeight asc
+            </when>
+            <otherwise>
+                <if test="params.percent !=null ">
+                    and ( (ttttt.lastWeight != 0 and ttttt.thisWeight /ttttt.lastWeight &gt;= 1 + #{params.percent})
+                              or ttttt.lastWeight = 0)
+                </if>
+                <if test="params.difference !=null ">
+                    and ( ttttt.thisWeight - ttttt.lastWeight  &gt;= #{params.difference})
+                </if>
+                order by ttttt.thisWeight /ttttt.lastWeight desc
+            </otherwise>
+        </choose>
+
+    </select>
+
+
+</mapper>

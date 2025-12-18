@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <mirrors>
+    <mirror>
+      <id>aliyunmaven</id>
+      <mirrorOf>*</mirrorOf>
+      <name>阿里云公共仓库</name>
+      <url>https://maven.aliyun.com/repository/public</url>
+    </mirror>
+  </mirrors>
+
+  <profiles>
+    <profile>
+      <id>aliyun</id>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>https://maven.aliyun.com/repository/central</url>
+        </repository>
+        <repository>
+          <id>public</id>
+          <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+        <repository>
+          <id>gradle-plugin</id>
+          <url>https://maven.aliyun.com/repository/gradle-plugin</url>
+        </repository>
+      </repositories>
+      
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>https://maven.aliyun.com/repository/central</url>
+        </pluginRepository>
+        <pluginRepository>
+          <id>public</id>
+          <url>https://maven.aliyun.com/repository/public</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>aliyun</activeProfile>
+  </activeProfiles>
+  
+</settings>

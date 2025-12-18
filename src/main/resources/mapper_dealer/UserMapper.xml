@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dealermanager.mapper_dealer.UserMapper">
+    <select id="queryUser" resultType="com.dealermanager.entity.UserEntity">
+        SELECT A.ID,A.NAME,A.account,A.mobile,A.email,A.companyID,B.name as company,A.userType,A.password
+        FROM T_USER A left join T_ORGANIZATION B on A.companyID=B.ID
+        <where>
+            A.isvalid = 1 and A.status = 0
+            AND A.mobile = #{mobile,jdbcType=VARCHAR}
+        </where>
+    </select>
+
+    <select id="queryUserList" resultType="com.dealermanager.entity.UserEntity">
+        SELECT A.ID,A.NAME,A.account,A.mobile,A.email,A.companyID,B.name as company,A.userType
+        FROM T_USER A left join T_ORGANIZATION B on A.companyID=B.ID
+        <where>
+            A.isvalid = 1 and A.status = 0 and A.userType != 0
+            AND A.companyID = #{companyID,jdbcType=NUMERIC}
+        </where>
+        order by A.createtime desc
+    </select>
+
+    <update id="updateLoginInfo">
+        update T_USER set loginTimes = loginTimes + 1,lastloginTime=now()
+        where  mobile = #{mobile,jdbcType=VARCHAR}
+    </update>
+
+    <update id="updatePwd">
+        update T_USER set password = #{pwd,jdbcType=VARCHAR},chgpwdtime = now()
+        where  id = #{userId,jdbcType=NUMERIC}
+    </update>
+
+    <update id="resetPwd">
+        update T_USER set password = #{pwd,jdbcType=VARCHAR},chgpwdtime =  now()
+        where  mobile = #{mobile,jdbcType=VARCHAR}
+    </update>
+
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id">
+       insert into T_USER(name,userType,companyID,certno,address,phone,mobile,email,password,createDate)
+       values(#{params.name,jdbcType=VARCHAR},
+              1,
+              #{params.companyID,jdbcType=NUMERIC},
+              #{params.certno,jdbcType=VARCHAR},
+              #{params.address,jdbcType=VARCHAR},
+              #{params.phone,jdbcType=VARCHAR},
+              #{params.mobile,jdbcType=VARCHAR},
+              #{params.email,jdbcType=VARCHAR},
+              #{params.password,jdbcType=VARCHAR},
+              DATE_FORMAT(Now(),'%Y%m%d'))
+    </insert>
+
+    <insert id="addCompany" useGeneratedKeys="true" keyProperty="id">
+         insert into T_ORGANIZATION(fid,type,grade,name,address,phone,createtime,companySec)
+         values(0,1,0,
+                #{params.name,jdbcType=VARCHAR},
+                #{params.address,jdbcType=VARCHAR},
+                #{params.phone,jdbcType=VARCHAR},
+                now(),
+                #{params.companySec,jdbcType=VARCHAR}
+                )
+    </insert>
+
+    <select id="getCompanyBySec" resultType="com.dealermanager.entity.CompanyEntity">
+        select id,name,companySec from  T_ORGANIZATION where companySec = #{companySec,jdbcType=VARCHAR}
+    </select>
+
+    <select id="getCompanyList" resultType="com.dealermanager.entity.CompanyEntity">
+        select id,name,companySec from  T_ORGANIZATION where isValid = 1 and type =1 order by createtime desc
+    </select>
+
+    <insert id="mergeUserInfo" parameterType="java.util.Map">
+
+        insert INTO t_user_token(userid,token,createtime)
+        values(#{userId,jdbcType = NUMERIC},#{token,jdbcType = VARCHAR},NOW()) ON DUPLICATE KEY
+        UPDATE
+            token = #{token,jdbcType = VARCHAR},
+            createtime = now()
+    </insert>
+
+    <select id="queryUserInfoByToken" resultType="com.dealermanager.entity.UserEntity">
+        SELECT
+            u.id,
+            u.name,
+            u.account,
+            u.mobile,
+            u.email,
+            o.id as companyID,
+            O.name as company,
+            u.userType
+        FROM
+            t_user_token t
+                LEFT JOIN T_USER u ON t.userid = u.id
+                left join t_organization o on u.companyID = o.id
+        WHERE
+            t.token =#{token,jdbcType=VARCHAR}
+        LIMIT 1
+    </select>
+
+    <delete id="deleteToken" >
+        DELETE FROM t_user_token WHERE  userid=#{userId,jdbcType=VARCHAR}
+    </delete>
+
+</mapper>
+

@@ -1,0 +1,250 @@
+2023-11-04 00:43:40.484 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] - Shutting down ExecutorService 'applicationTaskExecutor'
+2023-11-04 00:43:40.490 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] - HikariPool-1 - Shutdown initiated...
+2023-11-04 00:43:40.497 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] - HikariPool-1 - Shutdown completed.
+2023-11-04 00:43:58.203 [main] INFO  com.dealermanager.DealermanagerApplication [SpringApplication.java : 655] - The following profiles are active: dev
+2023-11-04 00:43:59.486 [main] INFO  o.springframework.cloud.context.scope.GenericScope [GenericScope.java : 295] - BeanFactory id=26497cc7-c9a3-32cb-bb94-938bdef9619e
+2023-11-04 00:43:59.877 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] - Tomcat initialized with port(s): 30219 (http)
+2023-11-04 00:43:59.886 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Initializing ProtocolHandler ["http-nio-30219"]
+2023-11-04 00:43:59.888 [main] INFO  org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] - Starting service [Tomcat]
+2023-11-04 00:43:59.888 [main] INFO  org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2023-11-04 00:44:00.212 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring embedded WebApplicationContext
+2023-11-04 00:44:00.213 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] - Root WebApplicationContext: initialization completed in 1983 ms
+2023-11-04 00:44:03.879 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver [EndpointLinksResolver.java : 58] - Exposing 16 endpoint(s) beneath base path '/actuator'
+2023-11-04 00:44:03.994 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-11-04 00:44:04.009 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-11-04 00:44:04.009 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-11-04 00:44:04.015 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-11-04 00:44:04.016 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-11-04 00:44:04.100 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] - Initializing ExecutorService 'applicationTaskExecutor'
+2023-11-04 00:44:06.881 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Starting ProtocolHandler ["http-nio-30219"]
+2023-11-04 00:44:06.913 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] - Tomcat started on port(s): 30219 (http) with context path ''
+2023-11-04 00:44:09.267 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] - Context refreshed
+2023-11-04 00:44:09.292 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] - Found 1 custom documentation plugin(s)
+2023-11-04 00:44:09.336 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] - Scanning for api listing references
+2023-11-04 00:44:09.574 [main] INFO  com.dealermanager.DealermanagerApplication [StartupInfoLogger.java : 61] - Started DealermanagerApplication in 17.231 seconds (JVM running for 20.418)
+2023-11-04 00:44:12.954 [main] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] - HikariPool-1 - Starting...
+2023-11-04 00:44:19.472 [main] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] - HikariPool-1 - Start completed.
+2023-11-04 00:44:22.564 [RMI TCP Connection(3)-192.168.10.7] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-04 00:44:22.565 [RMI TCP Connection(3)-192.168.10.7] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] - Initializing Servlet 'dispatcherServlet'
+2023-11-04 00:44:22.572 [RMI TCP Connection(3)-192.168.10.7] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] - Completed initialization in 7 ms
+2023-11-04 01:17:14.446 [http-nio-30219-exec-3] INFO  c.dealermanager.controller.SecurityCallController [SecurityCallController.java : 135] - 导入完成
+2023-11-04 01:37:05.883 [http-nio-30219-exec-9] INFO  c.dealermanager.controller.SecurityCallController [SecurityCallController.java : 135] - 导入完成
+2023-11-04 08:57:06.246 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool [HikariPool.java : 787] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h17m31s637ms404µs401ns).
+2023-11-04 12:11:42.387 [http-nio-30219-exec-3] ERROR com.dealermanager.exception.GlobalExceptionHandler [GlobalExceptionHandler.java : 35] - /yixun/security/call:服务运行异常
+java.lang.NullPointerException: null
+	at com.dealermanager.controller.SecurityCallController.call(SecurityCallController.java:87)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2023-11-04 12:42:01.574 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool [HikariPool.java : 787] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m21s868ms292µs800ns).
+2023-11-04 12:42:11.068 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] - Shutting down ExecutorService 'applicationTaskExecutor'
+2023-11-04 12:42:11.076 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] - HikariPool-1 - Shutdown initiated...
+2023-11-04 12:42:11.083 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] - HikariPool-1 - Shutdown completed.
+2023-11-04 12:43:24.629 [main] INFO  com.dealermanager.DealermanagerApplication [SpringApplication.java : 655] - The following profiles are active: dev
+2023-11-04 12:43:25.977 [main] INFO  o.springframework.cloud.context.scope.GenericScope [GenericScope.java : 295] - BeanFactory id=26497cc7-c9a3-32cb-bb94-938bdef9619e
+2023-11-04 12:43:26.333 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] - Tomcat initialized with port(s): 30219 (http)
+2023-11-04 12:43:26.343 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Initializing ProtocolHandler ["http-nio-30219"]
+2023-11-04 12:43:26.344 [main] INFO  org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] - Starting service [Tomcat]
+2023-11-04 12:43:26.344 [main] INFO  org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2023-11-04 12:43:26.652 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring embedded WebApplicationContext
+2023-11-04 12:43:26.653 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] - Root WebApplicationContext: initialization completed in 1999 ms
+2023-11-04 12:43:30.322 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver [EndpointLinksResolver.java : 58] - Exposing 16 endpoint(s) beneath base path '/actuator'
+2023-11-04 12:43:30.409 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-11-04 12:43:30.419 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-11-04 12:43:30.419 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-11-04 12:43:30.424 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-11-04 12:43:30.425 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-11-04 12:43:30.490 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] - Initializing ExecutorService 'applicationTaskExecutor'
+2023-11-04 12:43:34.120 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Starting ProtocolHandler ["http-nio-30219"]
+2023-11-04 12:43:34.148 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] - Tomcat started on port(s): 30219 (http) with context path ''
+2023-11-04 12:43:36.468 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] - Context refreshed
+2023-11-04 12:43:36.491 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] - Found 1 custom documentation plugin(s)
+2023-11-04 12:43:36.541 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] - Scanning for api listing references
+2023-11-04 12:43:36.807 [main] INFO  com.dealermanager.DealermanagerApplication [StartupInfoLogger.java : 61] - Started DealermanagerApplication in 18.116 seconds (JVM running for 21.446)
+2023-11-04 12:43:36.845 [main] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] - HikariPool-1 - Starting...
+2023-11-04 12:43:42.935 [main] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] - HikariPool-1 - Start completed.
+2023-11-04 12:43:44.115 [RMI TCP Connection(1)-192.168.10.7] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-04 12:43:44.116 [RMI TCP Connection(1)-192.168.10.7] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] - Initializing Servlet 'dispatcherServlet'
+2023-11-04 12:43:44.124 [RMI TCP Connection(1)-192.168.10.7] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] - Completed initialization in 8 ms
+2023-11-04 12:48:21.318 [http-nio-30219-exec-1] ERROR com.dealermanager.exception.GlobalExceptionHandler [GlobalExceptionHandler.java : 35] - /yixun/security/call:服务运行异常
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'c_call_2m_value' cannot be null
+### The error may exist in file [F:\study\dealer\target\classes\mapper_dealer\SecurityCallMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into T_SECURITY_CALL(         c_date,         c_company,         c_security_code ,         c_security_name ,         c_call_index    ,         c_call_1m_value ,         c_call_2m_value ,         c_call_3m_value ,         c_call_6m_value ,         c_call_12m_value,         c_call_24m_value,         c_call_2w_value,         n_size)                        (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)          UNION              (select             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?,             ?             from dual)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'c_call_2m_value' cannot be null
+; Column 'c_call_2m_value' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'c_call_2m_value' cannot be null
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:87)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy102.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:60)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy103.addSecurityValues(Unknown Source)
+	at com.dealermanager.service.impl.SecurityCallServiceImpl.addSecurityValues(SecurityCallServiceImpl.java:48)
+	at com.dealermanager.service.impl.SecurityCallServiceImpl$$FastClassBySpringCGLIB$$146c6849.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.dealermanager.service.impl.SecurityCallServiceImpl$$EnhancerBySpringCGLIB$$828357e5.addSecurityValues(<generated>)
+	at com.dealermanager.controller.SecurityCallController.call(SecurityCallController.java:135)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'c_call_2m_value' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at sun.reflect.GeneratedMethodAccessor117.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy137.update(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:56)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.update(MybatisCachingExecutor.java:85)
+	at sun.reflect.GeneratedMethodAccessor116.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:82)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy136.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.GeneratedMethodAccessor118.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 77 common frames omitted
+2023-11-04 13:17:07.332 [http-nio-30219-exec-2] INFO  c.dealermanager.controller.SecurityCallController [SecurityCallController.java : 138] - 导入完成
+2023-11-04 16:09:17.989 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool [HikariPool.java : 787] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h3m2s79ms988µs700ns).
+2023-11-04 19:16:35.082 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool [HikariPool.java : 787] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m44s363ms500µs700ns).
+2023-11-04 22:46:37.932 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool [HikariPool.java : 787] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h2m415ms940µs500ns).

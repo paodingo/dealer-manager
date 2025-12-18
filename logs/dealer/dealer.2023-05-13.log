@@ -1,0 +1,391 @@
+2023-05-13 00:10:53.621 [main] INFO  com.dealermanager.DealermanagerApplication [SpringApplication.java : 655] - The following profiles are active: dev
+2023-05-13 00:10:55.099 [main] ERROR org.springframework.boot.SpringApplication [SpringApplication.java : 837] - Application run failed
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:184)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.dealermanager.DealermanagerApplication.main(DealermanagerApplication.java:20)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.dealermanager.config.DealerDataSourceConfig] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:742)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:741)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:680)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:648)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1614)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:495)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:238)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:231)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:221)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:169)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:144)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
+	... 18 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/apache/ibatis/session/SqlSessionFactory
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 34 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.ibatis.session.SqlSessionFactory
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 38 common frames omitted
+2023-05-13 00:10:55.102 [main] WARN  org.springframework.boot.SpringApplication [SpringApplication.java : 819] - Unable to close ApplicationContext
+java.lang.IllegalStateException: Failed to introspect Class [com.dealermanager.config.DealerDataSourceConfig] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358)
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:742)
+	at java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1660)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:741)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:680)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:648)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1614)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:495)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:612)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1243)
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:880)
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:868)
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:855)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:806)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.dealermanager.DealermanagerApplication.main(DealermanagerApplication.java:20)
+Caused by: java.lang.NoClassDefFoundError: org/apache/ibatis/session/SqlSessionFactory
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463)
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.ibatis.session.SqlSessionFactory
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 25 common frames omitted
+2023-05-13 17:25:03.930 [main] INFO  com.dealermanager.DealermanagerApplication [SpringApplication.java : 655] - The following profiles are active: dev
+2023-05-13 17:25:05.999 [main] INFO  o.springframework.cloud.context.scope.GenericScope [GenericScope.java : 295] - BeanFactory id=505431a0-0880-3faf-b05d-2d1c26e29bd2
+2023-05-13 17:25:06.476 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] - Tomcat initialized with port(s): 30218 (http)
+2023-05-13 17:25:06.491 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Initializing ProtocolHandler ["http-nio-30218"]
+2023-05-13 17:25:06.492 [main] INFO  org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] - Starting service [Tomcat]
+2023-05-13 17:25:06.492 [main] INFO  org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2023-05-13 17:25:06.717 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring embedded WebApplicationContext
+2023-05-13 17:25:06.718 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] - Root WebApplicationContext: initialization completed in 2713 ms
+2023-05-13 17:25:10.477 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver [EndpointLinksResolver.java : 58] - Exposing 16 endpoint(s) beneath base path '/actuator'
+2023-05-13 17:25:10.661 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-05-13 17:25:10.681 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-05-13 17:25:10.681 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-05-13 17:25:10.727 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-05-13 17:25:10.727 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-05-13 17:25:10.880 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] - Initializing ExecutorService 'applicationTaskExecutor'
+2023-05-13 17:25:12.708 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Starting ProtocolHandler ["http-nio-30218"]
+2023-05-13 17:25:12.795 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] - Tomcat started on port(s): 30218 (http) with context path ''
+2023-05-13 17:25:13.918 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] - Context refreshed
+2023-05-13 17:25:14.010 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] - Found 1 custom documentation plugin(s)
+2023-05-13 17:25:14.123 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] - Scanning for api listing references
+2023-05-13 17:25:14.545 [main] INFO  com.dealermanager.DealermanagerApplication [StartupInfoLogger.java : 61] - Started DealermanagerApplication in 14.183 seconds (JVM running for 18.529)
+2023-05-13 17:25:14.880 [RMI TCP Connection(1)-192.168.2.231] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-13 17:25:14.881 [RMI TCP Connection(1)-192.168.2.231] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] - Initializing Servlet 'dispatcherServlet'
+2023-05-13 17:25:14.888 [RMI TCP Connection(2)-192.168.2.231] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] - HikariPool-1 - Starting...
+2023-05-13 17:25:14.892 [RMI TCP Connection(2)-192.168.2.231] WARN  com.zaxxer.hikari.util.DriverDataSource [DriverDataSource.java : 70] - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-05-13 17:25:14.899 [RMI TCP Connection(1)-192.168.2.231] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] - Completed initialization in 17 ms
+2023-05-13 17:25:14.988 [RMI TCP Connection(2)-192.168.2.231] WARN  o.s.boot.actuate.jdbc.DataSourceHealthIndicator [AbstractHealthIndicator.java : 87] - DataSource health check failed
+java.lang.RuntimeException: Driver com.mysql.jdbc.Driver claims to not accept jdbcUrl, jjdbc:mysql://43.156.138.155:30218/mysql
+	at com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:110)
+	at com.zaxxer.hikari.pool.PoolBase.initializeDataSource(PoolBase.java:325)
+	at com.zaxxer.hikari.pool.PoolBase.<init>(PoolBase.java:114)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:108)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.getProduct(DataSourceHealthIndicator.java:122)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doDataSourceHealthCheck(DataSourceHealthIndicator.java:105)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doHealthCheck(DataSourceHealthIndicator.java:100)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:82)
+	at org.springframework.boot.actuate.health.HealthIndicator.getHealth(HealthIndicator.java:37)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:71)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:39)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:99)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateHealth(HealthEndpointSupport.java:110)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:96)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:74)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:61)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:65)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:77)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:121)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:96)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:357)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2023-05-13 17:27:33.188 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] - Shutting down ExecutorService 'applicationTaskExecutor'
+2023-05-13 17:27:41.497 [main] INFO  com.dealermanager.DealermanagerApplication [SpringApplication.java : 655] - The following profiles are active: dev
+2023-05-13 17:27:42.712 [main] INFO  o.springframework.cloud.context.scope.GenericScope [GenericScope.java : 295] - BeanFactory id=505431a0-0880-3faf-b05d-2d1c26e29bd2
+2023-05-13 17:27:43.049 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] - Tomcat initialized with port(s): 30218 (http)
+2023-05-13 17:27:43.059 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Initializing ProtocolHandler ["http-nio-30218"]
+2023-05-13 17:27:43.060 [main] INFO  org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] - Starting service [Tomcat]
+2023-05-13 17:27:43.060 [main] INFO  org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2023-05-13 17:27:43.268 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring embedded WebApplicationContext
+2023-05-13 17:27:43.268 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] - Root WebApplicationContext: initialization completed in 1748 ms
+2023-05-13 17:27:46.733 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver [EndpointLinksResolver.java : 58] - Exposing 16 endpoint(s) beneath base path '/actuator'
+2023-05-13 17:27:46.879 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-05-13 17:27:46.899 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-05-13 17:27:46.899 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-05-13 17:27:46.905 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-05-13 17:27:46.906 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-05-13 17:27:47.015 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] - Initializing ExecutorService 'applicationTaskExecutor'
+2023-05-13 17:27:48.618 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Starting ProtocolHandler ["http-nio-30218"]
+2023-05-13 17:27:48.673 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] - Tomcat started on port(s): 30218 (http) with context path ''
+2023-05-13 17:27:49.724 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] - Context refreshed
+2023-05-13 17:27:49.768 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] - Found 1 custom documentation plugin(s)
+2023-05-13 17:27:49.863 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] - Scanning for api listing references
+2023-05-13 17:27:50.219 [main] INFO  com.dealermanager.DealermanagerApplication [StartupInfoLogger.java : 61] - Started DealermanagerApplication in 11.972 seconds (JVM running for 14.123)
+2023-05-13 17:27:51.291 [RMI TCP Connection(3)-192.168.2.231] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-13 17:27:51.292 [RMI TCP Connection(3)-192.168.2.231] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] - Initializing Servlet 'dispatcherServlet'
+2023-05-13 17:27:51.294 [RMI TCP Connection(4)-192.168.2.231] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] - HikariPool-1 - Starting...
+2023-05-13 17:27:51.298 [RMI TCP Connection(4)-192.168.2.231] WARN  com.zaxxer.hikari.util.DriverDataSource [DriverDataSource.java : 70] - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-05-13 17:27:51.307 [RMI TCP Connection(3)-192.168.2.231] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] - Completed initialization in 15 ms
+2023-05-13 17:27:55.023 [RMI TCP Connection(4)-192.168.2.231] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] - HikariPool-1 - Start completed.
+2023-05-13 17:30:53.209 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] - Shutting down ExecutorService 'applicationTaskExecutor'
+2023-05-13 17:30:53.225 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] - HikariPool-1 - Shutdown initiated...
+2023-05-13 17:30:53.237 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] - HikariPool-1 - Shutdown completed.
+2023-05-13 17:31:02.091 [main] INFO  com.dealermanager.DealermanagerApplication [SpringApplication.java : 655] - The following profiles are active: dev
+2023-05-13 17:31:03.566 [main] INFO  o.springframework.cloud.context.scope.GenericScope [GenericScope.java : 295] - BeanFactory id=505431a0-0880-3faf-b05d-2d1c26e29bd2
+2023-05-13 17:31:03.947 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] - Tomcat initialized with port(s): 30218 (http)
+2023-05-13 17:31:03.959 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Initializing ProtocolHandler ["http-nio-30218"]
+2023-05-13 17:31:03.959 [main] INFO  org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] - Starting service [Tomcat]
+2023-05-13 17:31:03.960 [main] INFO  org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2023-05-13 17:31:04.179 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring embedded WebApplicationContext
+2023-05-13 17:31:04.179 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] - Root WebApplicationContext: initialization completed in 2067 ms
+2023-05-13 17:31:07.477 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver [EndpointLinksResolver.java : 58] - Exposing 16 endpoint(s) beneath base path '/actuator'
+2023-05-13 17:31:07.644 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-05-13 17:31:07.663 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-05-13 17:31:07.663 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-05-13 17:31:07.674 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-05-13 17:31:07.674 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-05-13 17:31:07.795 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] - Initializing ExecutorService 'applicationTaskExecutor'
+2023-05-13 17:31:09.463 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Starting ProtocolHandler ["http-nio-30218"]
+2023-05-13 17:31:09.530 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] - Tomcat started on port(s): 30218 (http) with context path ''
+2023-05-13 17:31:10.781 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] - Context refreshed
+2023-05-13 17:31:10.823 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] - Found 1 custom documentation plugin(s)
+2023-05-13 17:31:10.939 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] - Scanning for api listing references
+2023-05-13 17:31:11.323 [main] INFO  com.dealermanager.DealermanagerApplication [StartupInfoLogger.java : 61] - Started DealermanagerApplication in 12.522 seconds (JVM running for 14.855)
+2023-05-13 17:31:11.552 [RMI TCP Connection(5)-192.168.2.231] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] - HikariPool-1 - Starting...
+2023-05-13 17:31:12.811 [RMI TCP Connection(7)-192.168.2.231] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-13 17:31:12.811 [RMI TCP Connection(7)-192.168.2.231] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] - Initializing Servlet 'dispatcherServlet'
+2023-05-13 17:31:12.823 [RMI TCP Connection(7)-192.168.2.231] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] - Completed initialization in 11 ms
+2023-05-13 17:31:15.418 [RMI TCP Connection(5)-192.168.2.231] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] - HikariPool-1 - Start completed.
+2023-05-13 17:33:00.071 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] - Shutting down ExecutorService 'applicationTaskExecutor'
+2023-05-13 17:33:00.075 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] - HikariPool-1 - Shutdown initiated...
+2023-05-13 17:33:00.091 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] - HikariPool-1 - Shutdown completed.
+2023-05-13 17:33:08.621 [main] INFO  com.dealermanager.DealermanagerApplication [SpringApplication.java : 655] - The following profiles are active: dev
+2023-05-13 17:33:09.947 [main] INFO  o.springframework.cloud.context.scope.GenericScope [GenericScope.java : 295] - BeanFactory id=505431a0-0880-3faf-b05d-2d1c26e29bd2
+2023-05-13 17:33:10.387 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] - Tomcat initialized with port(s): 30219 (http)
+2023-05-13 17:33:10.398 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Initializing ProtocolHandler ["http-nio-30219"]
+2023-05-13 17:33:10.399 [main] INFO  org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] - Starting service [Tomcat]
+2023-05-13 17:33:10.399 [main] INFO  org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2023-05-13 17:33:10.632 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring embedded WebApplicationContext
+2023-05-13 17:33:10.632 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] - Root WebApplicationContext: initialization completed in 1979 ms
+2023-05-13 17:33:13.940 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver [EndpointLinksResolver.java : 58] - Exposing 16 endpoint(s) beneath base path '/actuator'
+2023-05-13 17:33:14.131 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-05-13 17:33:14.149 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-05-13 17:33:14.149 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-05-13 17:33:14.160 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-05-13 17:33:14.161 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-05-13 17:33:14.292 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] - Initializing ExecutorService 'applicationTaskExecutor'
+2023-05-13 17:33:16.322 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Starting ProtocolHandler ["http-nio-30219"]
+2023-05-13 17:33:16.383 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] - Tomcat started on port(s): 30219 (http) with context path ''
+2023-05-13 17:33:17.441 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] - Context refreshed
+2023-05-13 17:33:17.484 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] - Found 1 custom documentation plugin(s)
+2023-05-13 17:33:17.594 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] - Scanning for api listing references
+2023-05-13 17:33:17.940 [main] INFO  com.dealermanager.DealermanagerApplication [StartupInfoLogger.java : 61] - Started DealermanagerApplication in 12.538 seconds (JVM running for 14.685)
+2023-05-13 17:33:18.953 [RMI TCP Connection(8)-192.168.2.231] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-13 17:33:18.954 [RMI TCP Connection(8)-192.168.2.231] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] - Initializing Servlet 'dispatcherServlet'
+2023-05-13 17:33:18.958 [RMI TCP Connection(7)-192.168.2.231] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] - HikariPool-1 - Starting...
+2023-05-13 17:33:18.972 [RMI TCP Connection(8)-192.168.2.231] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] - Completed initialization in 18 ms
+2023-05-13 17:33:22.510 [RMI TCP Connection(7)-192.168.2.231] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] - HikariPool-1 - Start completed.
+2023-05-13 17:54:43.802 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] - Shutting down ExecutorService 'applicationTaskExecutor'
+2023-05-13 17:54:43.819 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] - HikariPool-1 - Shutdown initiated...
+2023-05-13 17:54:43.832 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] - HikariPool-1 - Shutdown completed.
+2023-05-13 17:54:52.264 [main] INFO  com.dealermanager.DealermanagerApplication [SpringApplication.java : 655] - The following profiles are active: dev
+2023-05-13 17:54:53.676 [main] INFO  o.springframework.cloud.context.scope.GenericScope [GenericScope.java : 295] - BeanFactory id=505431a0-0880-3faf-b05d-2d1c26e29bd2
+2023-05-13 17:54:54.054 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 108] - Tomcat initialized with port(s): 30219 (http)
+2023-05-13 17:54:54.064 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Initializing ProtocolHandler ["http-nio-30219"]
+2023-05-13 17:54:54.065 [main] INFO  org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] - Starting service [Tomcat]
+2023-05-13 17:54:54.065 [main] INFO  org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2023-05-13 17:54:54.320 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring embedded WebApplicationContext
+2023-05-13 17:54:54.321 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] - Root WebApplicationContext: initialization completed in 2028 ms
+2023-05-13 17:54:57.690 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver [EndpointLinksResolver.java : 58] - Exposing 16 endpoint(s) beneath base path '/actuator'
+2023-05-13 17:54:57.839 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-05-13 17:54:57.861 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-05-13 17:54:57.861 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-05-13 17:54:57.868 [main] WARN  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 121] - No URLs will be polled as dynamic configuration sources.
+2023-05-13 17:54:57.868 [main] INFO  com.netflix.config.sources.URLConfigurationSource [URLConfigurationSource.java : 122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-05-13 17:54:57.977 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] - Initializing ExecutorService 'applicationTaskExecutor'
+2023-05-13 17:54:59.551 [main] INFO  org.apache.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] - Starting ProtocolHandler ["http-nio-30219"]
+2023-05-13 17:54:59.631 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 220] - Tomcat started on port(s): 30219 (http) with context path ''
+2023-05-13 17:55:00.855 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] - Context refreshed
+2023-05-13 17:55:00.903 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] - Found 1 custom documentation plugin(s)
+2023-05-13 17:55:01.013 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] - Scanning for api listing references
+2023-05-13 17:55:01.422 [main] INFO  com.dealermanager.DealermanagerApplication [StartupInfoLogger.java : 61] - Started DealermanagerApplication in 12.487 seconds (JVM running for 14.732)
+2023-05-13 17:55:02.605 [RMI TCP Connection(5)-192.168.2.231] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-13 17:55:02.605 [RMI TCP Connection(5)-192.168.2.231] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] - Initializing Servlet 'dispatcherServlet'
+2023-05-13 17:55:02.609 [RMI TCP Connection(6)-192.168.2.231] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] - HikariPool-1 - Starting...
+2023-05-13 17:55:02.619 [RMI TCP Connection(5)-192.168.2.231] INFO  org.springframework.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] - Completed initialization in 14 ms
+2023-05-13 17:55:06.952 [RMI TCP Connection(6)-192.168.2.231] INFO  com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] - HikariPool-1 - Start completed.
+2023-05-13 17:55:07.556 [http-nio-30219-exec-1] ERROR com.dealermanager.exception.GlobalExceptionHandler [GlobalExceptionHandler.java : 35] - /yixun/foreign/login:服务运行异常
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'A.ID' in 'field list'
+### The error may exist in file [F:\study\dealer\target\classes\mapper_dealer\UserMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT A.ID,A.NAME,A.account,A.mobile,A.email,A.companyID,B.name as company from  t_user_token t         left join T_USER u on t.userid = u.id         where t.vc_token =?         LIMIT 1
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'A.ID' in 'field list'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'A.ID' in 'field list'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy101.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:90)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy102.queryUserInfoByToken(Unknown Source)
+	at com.dealermanager.service.impl.UserServiceImpl.queryUserInfoByToken(UserServiceImpl.java:55)
+	at com.dealermanager.interceptor.LoginHandlerInterceptor.preHandle(LoginHandlerInterceptor.java:68)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:151)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'A.ID' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy141.query(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:69)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:165)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:64)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy140.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 57 common frames omitted
+2023-05-13 18:04:46.552 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] - Shutting down ExecutorService 'applicationTaskExecutor'

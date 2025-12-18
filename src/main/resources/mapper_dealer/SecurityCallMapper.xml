@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dealermanager.mapper_dealer.SecurityCallMapper">
+    <select id="getCallConfig" resultType="com.dealermanager.entity.SecurityCallConfigEntity">
+        select c_company as company,c_call_index as callIndex,c_call_time as callTime,n_call_value_col as callValueCol
+        from t_security_call_config
+    </select>
+
+    <select id="getCommonConfig" resultType="com.dealermanager.entity.SecurityCommonConfigEntity">
+        SELECT t.c_company as company,t.n_begin_row as beginRow,t.n_security_code_col as securityCodeCol,t.n_security_name_col as securityNameCol,
+               t.n_size_col as sizeCol,t.n_size_unit as sizeUnit
+        FROM t_security_common_config t
+    </select>
+
+    <delete id="deleteSecurityCallByCompnayAndDate">
+        delete from T_SECURITY_CALL  where c_date=#{date,jdbcType=NUMERIC} and c_company=#{company,jdbcType=VARCHAR}
+    </delete>
+
+    <insert id="addSecurityValues">
+        insert into T_SECURITY_CALL(
+        c_date,
+        c_company,
+        c_security_code ,
+        c_security_name ,
+        c_call_index    ,
+        c_call_1m_value ,
+        c_call_2m_value ,
+        c_call_3m_value ,
+        c_call_6m_value ,
+        c_call_12m_value,
+        c_call_24m_value,
+        c_call_2w_value,
+        n_size)
+        <foreach collection="valueCollection" item="call"  separator="UNION">
+            (select
+            #{call.date,jdbcType=NUMERIC},
+            #{call.company,jdbcType=VARCHAR},
+            #{call.securityCode,jdbcType=VARCHAR},
+            #{call.securityName,jdbcType=VARCHAR},
+            #{call.callIndex,jdbcType=VARCHAR},
+            #{call.1m,jdbcType=VARCHAR},
+            #{call.2m,jdbcType=VARCHAR},
+            #{call.3m,jdbcType=VARCHAR},
+            #{call.6m,jdbcType=VARCHAR},
+            #{call.12m,jdbcType=VARCHAR},
+            #{call.24m,jdbcType=VARCHAR},
+            #{call.2w,jdbcType=VARCHAR},
+            #{call.size,jdbcType=NUMERIC}
+            from dual)
+        </foreach>
+    </insert>
+
+</mapper>
+
